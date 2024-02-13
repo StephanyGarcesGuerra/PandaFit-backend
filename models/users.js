@@ -23,13 +23,17 @@ const usersSchema = new mongoose.Schema({
             type: String,
         },
         height:{
-            type: String,
+            type: Number,
         },
         weight:{
-            type: String,
+            type: Number,
         },
         birthday:{
-            type: String,
+            type: Date,
+        },
+        newUser:{
+            type: Boolean,
+            default: true
         }
 
     })

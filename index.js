@@ -8,6 +8,8 @@ import cors from 'cors';
 //*Import the routes you want to use
 import usersRoutes from './routes/users.js';
 import workoutsRoutes from './routes/workouts.js';
+import profileRoutes from './routes/profiles.js';
+
 
 const app = express();
 const port = process.env.port || 4000;
@@ -20,6 +22,7 @@ app.use(express.json());
 //* Call on the routes you want to use (that have been imported)
 app.use('/users', usersRoutes);
 app.use('/workouts', workoutsRoutes);
+app.use('/profiles', profileRoutes);
 
 
 app.get("/", (req, res) =>{

@@ -2,6 +2,7 @@ import {Router} from 'express';
 import User from '../models/users.js'
 import Workout from "../models/workouts.js"
 import { workouts } from '../seed/workouts.js';
+import Profile from '../models/profile.js';
 
 
 const router = new Router ();
@@ -29,6 +30,8 @@ router.post('/new', async (req,res) =>{
         for(let workout of workouts) {
             await Workout.create ({user_id: user._id, ...workout})
         }
+        await Profile.create({user_id: user._id});
+
 
     //* can include the below if you want to call on the profile,
     //* such as test to see it is working when you " res.status(201).json(user,profile)"
@@ -37,7 +40,8 @@ router.post('/new', async (req,res) =>{
     } catch(err){
             console.log(err);
         }
-    });
+    
+        });
     
 
 
@@ -55,6 +59,30 @@ router.put('/:id/update', async (req, res) =>{
         }
     });
 
+    // app.put('/api/tweets/add-comment/:id', async (req, res) => {
+    //     const {id} = req.params;
+    //     try {
+    //         const tweetToUpdate = await Tweet.findById(id);
+    //         tweetToUpdate.comments.push(req.body);
+    //         const updatedTweet = await Tweet.findByIdAndUpdate(id, tweetToUpdate, {new: true});
+    //         res.send(updatedTweet);
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // });
+
+    router.put('/user/:id', async (req, res) => {
+        const {id} = req.params;
+        try {
+            const newUser = await User.findById(id);
+            newUser.push(req.body);
+            const updatedNewUser = await Tweet.findByIdAndUpdate(id, newUser, {newUser: false});
+            res.send(updatedNewUser);
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
 
 //* DELETE route
 router.delete('/:id', async(req,res)=>{
@@ -66,6 +94,29 @@ router.delete('/:id', async(req,res)=>{
         console.log(err);
     }
 });
+
+//* POST sign in
+router.post('/signin', async(req,res)=>{
+    const {email, password} = req.body;
+
+  // find user with the provided email
+  const user = await User.findOne({email});
+
+  if (!user) {
+    return res.status(401).json({msg: "Invalid Credentials"});
+  }
+
+  // verify provided password with password hash from db
+//   const passwordMatched = await bcrypt.compare(password, user.password);
+  const passwordMatched = (password === user.password);
+
+  if (!passwordMatched) {
+    return res.status(401).json({msg: "Invalid Credentials password"})
+  }
+
+  // TODO: generate a jwt token and send it to the client
+  res.json(user);
+})
 
 
 export default router;
