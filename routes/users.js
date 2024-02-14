@@ -59,30 +59,6 @@ router.put('/:id/update', async (req, res) =>{
         }
     });
 
-    // app.put('/api/tweets/add-comment/:id', async (req, res) => {
-    //     const {id} = req.params;
-    //     try {
-    //         const tweetToUpdate = await Tweet.findById(id);
-    //         tweetToUpdate.comments.push(req.body);
-    //         const updatedTweet = await Tweet.findByIdAndUpdate(id, tweetToUpdate, {new: true});
-    //         res.send(updatedTweet);
-    //     } catch (e) {
-    //         console.log(e);
-    //     }
-    // });
-
-    router.put('/user/:id', async (req, res) => {
-        const {id} = req.params;
-        try {
-            const newUser = await User.findById(id);
-            newUser.push(req.body);
-            const updatedNewUser = await Tweet.findByIdAndUpdate(id, newUser, {newUser: false});
-            res.send(updatedNewUser);
-        } catch (e) {
-            console.log(e);
-        }
-    });
-
 
 //* DELETE route
 router.delete('/:id', async(req,res)=>{
