@@ -26,8 +26,8 @@
   </ol>
 </details>
 <!-- ABOUT THE PROJECT -->
-## About The Project
 
+### About the Project
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
 My project, PandaFit, is an app meant to tailor a workout plan for users who want to start strength training. Strenghth training and weight lifting is a passion of mine and as someone who wants to get
@@ -44,12 +44,12 @@ As of now the exercises are my personal workout plan, but as we work more on the
 
 This project used:
 
-React
-Bootstrap 
-Mongoose 
-Node
-MongoDB
-Express
+- React
+- Bootstrap 
+- Mongoose 
+- Node
+- MongoDB
+- Express
 
 <!-- REPOSITORY LINKS -->
 ## Repository Links
