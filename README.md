@@ -1,6 +1,4 @@
-Started working on the backend for this project. 
 
-Frontend repository: https://github.com/StephanyGarcesGuerra/PandaFit-frontend/tree/main/src
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -19,7 +17,7 @@ Frontend repository: https://github.com/StephanyGarcesGuerra/PandaFit-frontend/t
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li> -->
-    <!-- <li><a href="#usage">Usage</a></li> -->
+    <li><a href="#links">Repository Links</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <!-- <li><a href="#contributing">Contributing</a></li> -->
     <!-- <li><a href="#license">License</a></li>
@@ -30,9 +28,13 @@ Frontend repository: https://github.com/StephanyGarcesGuerra/PandaFit-frontend/t
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-My project, PandaFit, is an app meant to tailor a workout plan for users who want to start strength training. 
+My project, PandaFit, is an app meant to tailor a workout plan for users who want to start strength training. Strenghth training and weight lifting is a passion of mine and as someone who wants to get
+her certificate in personal training, I wanted to implement and pass down my knowledge to those who are 
+scared to start their own journey, especially women. 
+
+As of now the exercises are my personal workout plan, but as we work more on the app, the idea is to be able to have more tailored routines such as glute focused, quad focused, routines.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -40,10 +42,19 @@ My project, PandaFit, is an app meant to tailor a workout plan for users who wan
 
 ### Built With
 
-This project used React, Bootstrap, Javascript.
+This project used:
 
-* [![React][React.js]][React-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+React
+Bootstrap 
+Mongoose 
+Node
+MongoDB
+Express
+
+<!-- REPOSITORY LINKS -->
+## Repository Links
+Frontend link: https://github.com/StephanyGarcesGuerra/PandaFit-frontend/tree/main/src
+Backend (current)link: https://github.com/StephanyGarcesGuerra/PandaFit-backend
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -52,7 +63,8 @@ This project used React, Bootstrap, Javascript.
 ## Roadmap
 
 - [ ] Finish the Journal Page
-- [ ] Add more CSS
+- [ ] Add a calorie calculator
+- [ ] Add videos and tips of the exercises
 - [ ] Add ability to edit profile and update weight
 
 
